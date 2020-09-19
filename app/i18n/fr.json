@@ -1,0 +1,15 @@
+{
+	"common": {
+	  "ok": "OK!",
+	  "cancel": "Annuler",
+	  "back": "Retour"
+	},
+	"storybook": {
+	  "placeholder": "Placeholder",
+	  "field": "Field"
+	},
+	"homeScreen": {
+	  "poweredBy": "GLIFE MUSIC"
+	}
+  }
+  
