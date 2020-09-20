@@ -5,9 +5,13 @@
  * You'll likely spend most of your time in this file.
  */
 import React from "react"
-
-import { createNativeStackNavigator } from "react-native-screens/native-stack"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { HomeScreen } from "../screens"
+
+import SearchIcon from './icons/searchbar.svg'
+import HeartIcon from './icons/heart.svg'
+import HomeIcon from './icons/house-fill.svg'
+import { SvgProps } from "react-native-svg"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -22,24 +26,36 @@ import { HomeScreen } from "../screens"
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type PrimaryParamList = {
-	welcome: undefined
-	demo: undefined
+	search: undefined
+	playlist: undefined
 	home: undefined
 }
 
-// Documentation: https://github.com/software-mansion/react-native-screens/tree/master/native-stack
-const Stack = createNativeStackNavigator<PrimaryParamList>()
+const tabs: { name: string, icon: React.FC<SvgProps>, route: keyof PrimaryParamList, component: React.FC }[] = [
+	{ name: 'Accueil', icon: HomeIcon, route: 'home', component: HomeScreen },
+	{ name: 'Favoris', icon: HeartIcon, route: 'playlist', component: HomeScreen },
+	{ name: 'Rechercher', icon: SearchIcon, route: 'search', component: HomeScreen },
+];
+
+
+const Tab = createBottomTabNavigator<PrimaryParamList>()
 
 export function PrimaryNavigator() {
 	return (
-		<Stack.Navigator
+		<Tab.Navigator
 			screenOptions={{
-				headerShown: false,
-				gestureEnabled: true,
+			}}
+			tabBarOptions={{
+				safeAreaInsets: { bottom: 4 },
+				activeBackgroundColor: '#161616',
+				inactiveBackgroundColor: '#161616'
 			}}
 		>
-			<Stack.Screen name="home" component={HomeScreen} />
-		</Stack.Navigator>
+			{tabs.map((tab, key) => <Tab.Screen key={key} options={{
+				tabBarLabel: 'Home',
+				tabBarIcon: ({ color, size }) => <tab.icon fill={color} width={size} height={size} />,
+			}} name={tab.route} component={tab.component} />)}
+		</Tab.Navigator>
 	)
 }
 

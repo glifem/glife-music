@@ -37,7 +37,7 @@ const CATEGORY: ViewStyle = {
 const ROW: ViewStyle = {
 	display: 'flex',
 	flexDirection: 'row',
-	marginBottom: spacing[3],
+	marginBottom: spacing[0],
 	width: '100%'
 }
 
@@ -72,7 +72,7 @@ const LOADER_IMAGE: ViewStyle = {
 const H3: TextStyle = {
 	margin: 0,
 	fontSize: 12,
-	width: 75,
+	width: '100%',
 	maxHeight: 15,
 	fontWeight: 'bold',
 	overflow: 'hidden',
@@ -97,7 +97,6 @@ const HEADER_TITLE: TextStyle = {
 }
 
 export const HomeScreen = observer(function HomeScreen() {
-	const navigation = useNavigation();
 	const { music } = useStores();
 
 	const getPlaylist = (playlist: IPlaylist, index: number) => {
