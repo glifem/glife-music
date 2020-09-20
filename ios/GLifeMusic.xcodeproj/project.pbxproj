@@ -8,24 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* GLifeMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* GLifeMusicTests.m */; };
+		0A22C340389A4929A1FE3E00 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B5CFE0D8E4031931F80C0 /* SF-Pro-Text-Bold.otf */; };
+		0F078BD1CFEF4B6D98A4A681 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B3F3ED521F4F4BBC8F5AC868 /* SF-Pro-Text-Regular.otf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		162A71944E14462FB593D899 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE4A4B7CBF7A46A593C2E3F0 /* SF-Pro-Display-Semibold.otf */; };
+		2CBD457D20F6592F6027A743 /* libPods-GLifeMusic-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5926B029091F95FF21DCE8AE /* libPods-GLifeMusic-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* GLifeMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* GLifeMusicTests.m */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		F6FB856615F24FD8BEA4DB2A /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2368AE7C696F45038E33541B /* SF-Pro-Display-Bold.otf */; };
-		EBF9A6F803DE438882C73EB3 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C33B5A1D5B1D49ACB1F2EB8E /* SF-Pro-Display-Light.otf */; };
-		85989E45C02747D88D36581F /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C550C0EAF9CB464ABDA13F6E /* SF-Pro-Display-Regular.otf */; };
-		162A71944E14462FB593D899 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE4A4B7CBF7A46A593C2E3F0 /* SF-Pro-Display-Semibold.otf */; };
-		F2E29B37B43947C1AA52FC5D /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2018C32B13354F78AD23F9E5 /* SF-Pro-Display-Ultralight.otf */; };
-		0A22C340389A4929A1FE3E00 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B5CFE0D8E4031931F80C0 /* SF-Pro-Text-Bold.otf */; };
-		D231C09F473646BE963F22D9 /* SF-Pro-Text-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FACE26B305C4CEB8CDCF110 /* SF-Pro-Text-Light.ttf */; };
+		381880BF9BB402971FC813FE /* libPods-GLifeMusic-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F81094C2A9436E2C3191130 /* libPods-GLifeMusic-tvOS.a */; };
 		7D2EEF0ADDA1403987657C76 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB6B7B3628994DB189B30B23 /* SF-Pro-Text-Medium.otf */; };
-		0F078BD1CFEF4B6D98A4A681 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B3F3ED521F4F4BBC8F5AC868 /* SF-Pro-Text-Regular.otf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		85989E45C02747D88D36581F /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C550C0EAF9CB464ABDA13F6E /* SF-Pro-Display-Regular.otf */; };
+		87AB0357AA8C6CEF785459DF /* libPods-GLifeMusic-GLifeMusicTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1B2A5C7C69500CE0C94576 /* libPods-GLifeMusic-GLifeMusicTests.a */; };
+		D231C09F473646BE963F22D9 /* SF-Pro-Text-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FACE26B305C4CEB8CDCF110 /* SF-Pro-Text-Light.ttf */; };
 		E06AA0850CDF4798A85D5064 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF0964969AD8474CAB6DCB4D /* SF-Pro-Text-Semibold.otf */; };
+		EBF9A6F803DE438882C73EB3 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C33B5A1D5B1D49ACB1F2EB8E /* SF-Pro-Display-Light.otf */; };
+		ECCCD5369D8A71CBDADCDB9C /* libPods-GLifeMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 390703462DD27BC00E4F35CD /* libPods-GLifeMusic.a */; };
+		F2E29B37B43947C1AA52FC5D /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2018C32B13354F78AD23F9E5 /* SF-Pro-Display-Ultralight.otf */; };
+		F6FB856615F24FD8BEA4DB2A /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2368AE7C696F45038E33541B /* SF-Pro-Display-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,27 +54,39 @@
 		00E356EE1AD99517003FC87E /* GLifeMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLifeMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* GLifeMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLifeMusicTests.m; sourceTree = "<group>"; };
+		0A1B2A5C7C69500CE0C94576 /* libPods-GLifeMusic-GLifeMusicTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GLifeMusic-GLifeMusicTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* GLifeMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLifeMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = GLifeMusic/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = GLifeMusic/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GLifeMusic/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GLifeMusic/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GLifeMusic/main.m; sourceTree = "<group>"; };
+		2018C32B13354F78AD23F9E5 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Display-Ultralight.otf"; path = "../assets/fonts/SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		2368AE7C696F45038E33541B /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Display-Bold.otf"; path = "../assets/fonts/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* GLifeMusic-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GLifeMusic-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* GLifeMusic-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GLifeMusic-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30AD0525B518350652C95914 /* Pods-GLifeMusic-GLifeMusicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLifeMusic-GLifeMusicTests.debug.xcconfig"; path = "Target Support Files/Pods-GLifeMusic-GLifeMusicTests/Pods-GLifeMusic-GLifeMusicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38D54744D3AC0AB767108945 /* Pods-GLifeMusic-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLifeMusic-tvOS.release.xcconfig"; path = "Target Support Files/Pods-GLifeMusic-tvOS/Pods-GLifeMusic-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		390703462DD27BC00E4F35CD /* libPods-GLifeMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GLifeMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9B5CFE0D8E4031931F80C0 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Bold.otf"; path = "../assets/fonts/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		4FACE26B305C4CEB8CDCF110 /* SF-Pro-Text-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Light.ttf"; path = "../assets/fonts/SF-Pro-Text-Light.ttf"; sourceTree = "<group>"; };
+		55D96D53C415C5E7AF5C6CF8 /* Pods-GLifeMusic-GLifeMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLifeMusic-GLifeMusicTests.release.xcconfig"; path = "Target Support Files/Pods-GLifeMusic-GLifeMusicTests/Pods-GLifeMusic-GLifeMusicTests.release.xcconfig"; sourceTree = "<group>"; };
+		5926B029091F95FF21DCE8AE /* libPods-GLifeMusic-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GLifeMusic-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GLifeMusic/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F81094C2A9436E2C3191130 /* libPods-GLifeMusic-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GLifeMusic-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D613CCEB87FA56E2C635865 /* Pods-GLifeMusic-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLifeMusic-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-GLifeMusic-tvOSTests/Pods-GLifeMusic-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A24555D1C07FEACF1B384BDF /* Pods-GLifeMusic-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLifeMusic-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-GLifeMusic-tvOS/Pods-GLifeMusic-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B3F3ED521F4F4BBC8F5AC868 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Regular.otf"; path = "../assets/fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		BB6B7B3628994DB189B30B23 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Medium.otf"; path = "../assets/fonts/SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		C0F43E94783E9BB6FDAF16DD /* Pods-GLifeMusic-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLifeMusic-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-GLifeMusic-tvOSTests/Pods-GLifeMusic-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C33B5A1D5B1D49ACB1F2EB8E /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Display-Light.otf"; path = "../assets/fonts/SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		C550C0EAF9CB464ABDA13F6E /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Display-Regular.otf"; path = "../assets/fonts/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		D0404D8BBEE15EC197CB3C68 /* Pods-GLifeMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLifeMusic.debug.xcconfig"; path = "Target Support Files/Pods-GLifeMusic/Pods-GLifeMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		2368AE7C696F45038E33541B /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Bold.otf"; path = "../assets/fonts/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C33B5A1D5B1D49ACB1F2EB8E /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Light.otf"; path = "../assets/fonts/SF-Pro-Display-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C550C0EAF9CB464ABDA13F6E /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Regular.otf"; path = "../assets/fonts/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EE4A4B7CBF7A46A593C2E3F0 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Semibold.otf"; path = "../assets/fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2018C32B13354F78AD23F9E5 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Ultralight.otf"; path = "../assets/fonts/SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3A9B5CFE0D8E4031931F80C0 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; name = "SF-Pro-Text-Bold.otf"; path = "../assets/fonts/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4FACE26B305C4CEB8CDCF110 /* SF-Pro-Text-Light.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Text-Light.ttf"; path = "../assets/fonts/SF-Pro-Text-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BB6B7B3628994DB189B30B23 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; name = "SF-Pro-Text-Medium.otf"; path = "../assets/fonts/SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B3F3ED521F4F4BBC8F5AC868 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; name = "SF-Pro-Text-Regular.otf"; path = "../assets/fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EF0964969AD8474CAB6DCB4D /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; name = "SF-Pro-Text-Semibold.otf"; path = "../assets/fonts/SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE4A4B7CBF7A46A593C2E3F0 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Display-Semibold.otf"; path = "../assets/fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		EF0964969AD8474CAB6DCB4D /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Semibold.otf"; path = "../assets/fonts/SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		F900A6F4CCFA402D4858DFD5 /* Pods-GLifeMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLifeMusic.release.xcconfig"; path = "Target Support Files/Pods-GLifeMusic/Pods-GLifeMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87AB0357AA8C6CEF785459DF /* libPods-GLifeMusic-GLifeMusicTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECCCD5369D8A71CBDADCDB9C /* libPods-GLifeMusic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381880BF9BB402971FC813FE /* libPods-GLifeMusic-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CBD457D20F6592F6027A743 /* libPods-GLifeMusic-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +161,30 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
+				390703462DD27BC00E4F35CD /* libPods-GLifeMusic.a */,
+				0A1B2A5C7C69500CE0C94576 /* libPods-GLifeMusic-GLifeMusicTests.a */,
+				8F81094C2A9436E2C3191130 /* libPods-GLifeMusic-tvOS.a */,
+				5926B029091F95FF21DCE8AE /* libPods-GLifeMusic-tvOSTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		339864E4E3454AD5AFAAF3D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2368AE7C696F45038E33541B /* SF-Pro-Display-Bold.otf */,
+				C33B5A1D5B1D49ACB1F2EB8E /* SF-Pro-Display-Light.otf */,
+				C550C0EAF9CB464ABDA13F6E /* SF-Pro-Display-Regular.otf */,
+				EE4A4B7CBF7A46A593C2E3F0 /* SF-Pro-Display-Semibold.otf */,
+				2018C32B13354F78AD23F9E5 /* SF-Pro-Display-Ultralight.otf */,
+				3A9B5CFE0D8E4031931F80C0 /* SF-Pro-Text-Bold.otf */,
+				4FACE26B305C4CEB8CDCF110 /* SF-Pro-Text-Light.ttf */,
+				BB6B7B3628994DB189B30B23 /* SF-Pro-Text-Medium.otf */,
+				B3F3ED521F4F4BBC8F5AC868 /* SF-Pro-Text-Regular.otf */,
+				EF0964969AD8474CAB6DCB4D /* SF-Pro-Text-Semibold.otf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -161,6 +203,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				339864E4E3454AD5AFAAF3D8 /* Resources */,
+				AAE1215FEC86E38AF8742F03 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -178,23 +221,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		339864E4E3454AD5AFAAF3D8 /* Resources */ = {
-			isa = "PBXGroup";
+		AAE1215FEC86E38AF8742F03 /* Pods */ = {
+			isa = PBXGroup;
 			children = (
-				2368AE7C696F45038E33541B /* SF-Pro-Display-Bold.otf */,
-				C33B5A1D5B1D49ACB1F2EB8E /* SF-Pro-Display-Light.otf */,
-				C550C0EAF9CB464ABDA13F6E /* SF-Pro-Display-Regular.otf */,
-				EE4A4B7CBF7A46A593C2E3F0 /* SF-Pro-Display-Semibold.otf */,
-				2018C32B13354F78AD23F9E5 /* SF-Pro-Display-Ultralight.otf */,
-				3A9B5CFE0D8E4031931F80C0 /* SF-Pro-Text-Bold.otf */,
-				4FACE26B305C4CEB8CDCF110 /* SF-Pro-Text-Light.ttf */,
-				BB6B7B3628994DB189B30B23 /* SF-Pro-Text-Medium.otf */,
-				B3F3ED521F4F4BBC8F5AC868 /* SF-Pro-Text-Regular.otf */,
-				EF0964969AD8474CAB6DCB4D /* SF-Pro-Text-Semibold.otf */,
+				D0404D8BBEE15EC197CB3C68 /* Pods-GLifeMusic.debug.xcconfig */,
+				F900A6F4CCFA402D4858DFD5 /* Pods-GLifeMusic.release.xcconfig */,
+				30AD0525B518350652C95914 /* Pods-GLifeMusic-GLifeMusicTests.debug.xcconfig */,
+				55D96D53C415C5E7AF5C6CF8 /* Pods-GLifeMusic-GLifeMusicTests.release.xcconfig */,
+				A24555D1C07FEACF1B384BDF /* Pods-GLifeMusic-tvOS.debug.xcconfig */,
+				38D54744D3AC0AB767108945 /* Pods-GLifeMusic-tvOS.release.xcconfig */,
+				9D613CCEB87FA56E2C635865 /* Pods-GLifeMusic-tvOSTests.debug.xcconfig */,
+				C0F43E94783E9BB6FDAF16DD /* Pods-GLifeMusic-tvOSTests.release.xcconfig */,
 			);
-			name = Resources;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -203,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "GLifeMusicTests" */;
 			buildPhases = (
+				5E3C374F80C048AB8AE6F9C1 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				CFD862DA7EDEAFEF5D81180F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,11 +264,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "GLifeMusic" */;
 			buildPhases = (
+				556F12F8CC038F31BD208433 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				63FF833FF143E7D5FA49A25C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +285,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "GLifeMusic-tvOS" */;
 			buildPhases = (
+				CBD96F153D25741EB6F020EB /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -259,6 +305,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "GLifeMusic-tvOSTests" */;
 			buildPhases = (
+				B4D744426276F483EEB47885 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -393,6 +440,130 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		556F12F8CC038F31BD208433 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GLifeMusic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E3C374F80C048AB8AE6F9C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GLifeMusic-GLifeMusicTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63FF833FF143E7D5FA49A25C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GLifeMusic/Pods-GLifeMusic-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GLifeMusic/Pods-GLifeMusic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4D744426276F483EEB47885 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GLifeMusic-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD96F153D25741EB6F020EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GLifeMusic-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFD862DA7EDEAFEF5D81180F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GLifeMusic-GLifeMusicTests/Pods-GLifeMusic-GLifeMusicTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GLifeMusic-GLifeMusicTests/Pods-GLifeMusic-GLifeMusicTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,6 +657,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30AD0525B518350652C95914 /* Pods-GLifeMusic-GLifeMusicTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -508,6 +680,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D96D53C415C5E7AF5C6CF8 /* Pods-GLifeMusic-GLifeMusicTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -527,6 +700,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0404D8BBEE15EC197CB3C68 /* Pods-GLifeMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -549,6 +723,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F900A6F4CCFA402D4858DFD5 /* Pods-GLifeMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -569,6 +744,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A24555D1C07FEACF1B384BDF /* Pods-GLifeMusic-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -596,6 +772,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38D54744D3AC0AB767108945 /* Pods-GLifeMusic-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -623,6 +800,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D613CCEB87FA56E2C635865 /* Pods-GLifeMusic-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -649,6 +827,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F43E94783E9BB6FDAF16DD /* Pods-GLifeMusic-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
