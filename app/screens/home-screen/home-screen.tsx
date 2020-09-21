@@ -81,9 +81,6 @@ const H3: TextStyle = {
   width: "100%",
   maxHeight: 15,
   fontWeight: "bold",
-  overflow: "hidden",
-  // display box
-  // text ellipsis
 }
 
 const H3_ARTIST: TextStyle = {
@@ -144,8 +141,12 @@ export const HomeScreen = observer(function HomeScreen() {
         onPress={(e) => onPress(e, music.id)}
       >
         <Image source={{ uri: coverUrl }} style={COVER_IMAGE} />
-        <Text style={H3}>{music.title}{music.title}</Text>
-        <Text style={H3_ARTIST}>{getMusicAuthorNames(music)}</Text>
+        <Text numberOfLines={1} style={H3}>
+          {music.title}
+        </Text>
+        <Text numberOfLines={1} style={H3_ARTIST}>
+          {getMusicAuthorNames(music)}
+        </Text>
       </TouchableOpacity>
     )
   }
