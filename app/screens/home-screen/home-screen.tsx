@@ -1,7 +1,6 @@
 import React from "react"
 import {
   View,
-  Image,
   ViewStyle,
   TextStyle,
   ImageStyle,
@@ -15,6 +14,7 @@ import { useStores } from "../../models"
 import playlists, { IPlaylist } from "../../models/music-store/music-types"
 import { getMusicAuthorNames } from "../../models/music-store/music-selector"
 import { MusicClassModelType } from "../../models/music-store/music-models"
+import ImageView from "../../components/image-view/image"
 
 const { S3_URL } = require("../../config/env")
 
@@ -55,24 +55,15 @@ const MUSIC: ViewStyle = {
   flex: 1,
 }
 
-const LOADER: ViewStyle = {
-  width: "100%",
-  aspectRatio: 1,
-  borderRadius: 5,
-  marginBottom: 2,
-}
-
 const COVER_IMAGE: ImageStyle = {
-  width: "100%",
   aspectRatio: 1,
   borderRadius: 5,
   marginBottom: 2,
-}
-
-const LOADER_IMAGE: ViewStyle = {
-  height: 25,
-  width: 25,
-  margin: 25,
+  flex: 1,
+  height: undefined,
+  width: undefined,
+  resizeMode: "cover",
+  overflow: "hidden",
 }
 
 const H3: TextStyle = {
@@ -123,24 +114,20 @@ export const HomeScreen = observer(function HomeScreen() {
     )
   }
 
-  const getLoader = () => {
-    return <View style={LOADER}>{/* <Image style={LOADER_IMAGE} src={coverMock} /> */}</View>
-  }
-
   const getMusic = (
     music: MusicClassModelType,
     onPress: (e: GestureResponderEvent, id: number) => void,
     lastChild: boolean,
   ) => {
     const coverUrl = `${S3_URL}/music/${music.id}.png`
-    console.log(coverUrl)
+
     return (
       <TouchableOpacity
         key={music.id}
         style={{ ...MUSIC, ...(lastChild ? { marginRight: 0 } : {}) }}
         onPress={(e) => onPress(e, music.id)}
       >
-        <Image source={{ uri: coverUrl }} style={COVER_IMAGE} />
+        <ImageView source={{ uri: coverUrl }} style={COVER_IMAGE} />
         <Text numberOfLines={1} style={H3}>
           {music.title}
         </Text>
