@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Image, ViewStyle, TextStyle, ImageStyle, TouchableOpacity, GestureResponderEvent } from "react-native"
+import { View, ViewStyle, TextStyle, ImageStyle, TouchableOpacity, GestureResponderEvent } from "react-native"
 import { observer } from "mobx-react-lite"
 import { Header, Screen, Text, Wallpaper } from "../../components"
 import { color, spacing } from "../../theme"
@@ -7,6 +7,7 @@ import { useStores } from "../../models"
 import playlists, { IPlaylist } from "../../models/music-store/music-types"
 import { getMusicAuthorNames } from "../../models/music-store/music-selector"
 import { MusicClassModelType } from "../../models/music-store/music-models"
+import ImageView from "../../components/image-view/image"
 import { useNavigation } from "@react-navigation/native"
 
 const { S3_URL } = require("../../config/env")
@@ -25,68 +26,55 @@ const HOME_PAGE: ViewStyle = {
 
 const H1: TextStyle = {
 	fontSize: 22,
-	fontWeight: 'bold',
+	fontWeight: "bold",
 	marginTop: 8,
-	marginBottom: 5
+	marginBottom: 5,
 }
 
 const CATEGORY: ViewStyle = {
-	display: 'flex'
+	display: "flex",
 }
 
 const ROW: ViewStyle = {
-	display: 'flex',
-	flexDirection: 'row',
+	display: "flex",
+	flexDirection: "row",
 	marginBottom: spacing[0],
-	width: '100%'
+	width: "100%",
 }
 
 const MUSIC: ViewStyle = {
-	display: 'flex',
-	flexDirection: 'column',
+	display: "flex",
+	flexDirection: "column",
 	marginRight: spacing[3],
-	flex: 1
-
-}
-
-const LOADER: ViewStyle = {
-	width: '100%',
-	aspectRatio: 1,
-	borderRadius: 5,
-	marginBottom: 2
+	flex: 1,
 }
 
 const COVER_IMAGE: ImageStyle = {
-	width: '100%',
 	aspectRatio: 1,
 	borderRadius: 5,
-	marginBottom: 2
-}
-
-const LOADER_IMAGE: ViewStyle = {
-	height: 25,
-	width: 25,
-	margin: 25
+	marginBottom: 2,
+	flex: 1,
+	height: undefined,
+	width: undefined,
+	resizeMode: "cover",
+	overflow: "hidden",
 }
 
 const H3: TextStyle = {
 	margin: 0,
 	fontSize: 12,
-	width: '100%',
+	width: "100%",
 	maxHeight: 15,
-	fontWeight: 'bold',
-	overflow: 'hidden',
-	// display box
-	// text ellipsis
+	fontWeight: "bold",
 }
 
 const H3_ARTIST: TextStyle = {
 	...H3,
-	color: '#ebebf599'
+	color: "#ebebf599",
 }
 
 const HEADER: TextStyle = {
-	paddingTop: spacing[3]
+	paddingTop: spacing[3],
 }
 const HEADER_TITLE: TextStyle = {
 	...BOLD,
@@ -100,6 +88,7 @@ export const HomeScreen = observer(function HomeScreen() {
 	const { music } = useStores();
 	const navigation = useNavigation();
 
+
 	const goToMusic = React.useMemo(() => () => navigation.navigate("player"), [
 		navigation,
 	])
@@ -111,51 +100,54 @@ export const HomeScreen = observer(function HomeScreen() {
 		const onMusicClick = (e: GestureResponderEvent, id: number) => {
 			e.stopPropagation();
 			e.preventDefault();
-	
+
 			music.setCurrentMusic(id);
 			goToMusic()
 		};
 
-		const goToPath = () => {
-		};
+		const goToPath = () => { }
 
 		return (
 			<TouchableOpacity key={index} style={CATEGORY} onPress={goToPath}>
 				<Text style={H1}>{playlist.title}</Text>
-				<View style={ROW}>{musics.slice(0, 3).map((m, k) => getMusic(m, onMusicClick, k === 2))}</View>
+				<View style={ROW}>
+					{musics.slice(0, 3).map((m, k) => getMusic(m, onMusicClick, k === 2))}
+				</View>
 			</TouchableOpacity>
-		);
-	};
+		)
+	}
 
-	const getLoader = () => {
-		return (
-			<View style={LOADER}>
-				{/* <Image style={LOADER_IMAGE} src={coverMock} /> */}
-			</View>
-		);
-	};
+	const getMusic = (
+		music: MusicClassModelType,
+		onPress: (e: GestureResponderEvent, id: number) => void,
+		lastChild: boolean,
+	) => {
+		const coverUrl = `${S3_URL}/music/${music.id}.png`
 
-	const getMusic = (music: MusicClassModelType, onPress: (e: GestureResponderEvent, id: number) => void, lastChild: boolean) => {
-		const coverUrl = `${S3_URL}/music/${music.id}.png`;
-		console.log(coverUrl)
 		return (
-			<TouchableOpacity key={music.id} style={{ ...MUSIC, ...(lastChild ? { marginRight: 0 } : {}) }} onPress={e => onPress(e, music.id)}>
-				<Image source={{ uri: coverUrl }} style={COVER_IMAGE} />
-				<Text style={H3}>{music.title}</Text>
-				<Text style={H3_ARTIST}>{getMusicAuthorNames(music)}</Text>
+			<TouchableOpacity
+				key={music.id}
+				style={{ ...MUSIC, ...(lastChild ? { marginRight: 0 } : {}) }}
+				onPress={(e) => onPress(e, music.id)}
+			>
+				<ImageView source={{ uri: coverUrl }} style={COVER_IMAGE} />
+				<Text numberOfLines={1} style={H3}>
+					{music.title}
+				</Text>
+				<Text numberOfLines={1} style={H3_ARTIST}>
+					{getMusicAuthorNames(music)}
+				</Text>
 			</TouchableOpacity>
-		);
-	};
+		)
+	}
 
 	return (
 		<View style={FULL}>
 			<Wallpaper />
-			<Header headerTx="homeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
 			<Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
+				<Header headerTx="homeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
 				{/* Playlists container */}
-				<View style={HOME_PAGE}>
-					{playlists.map((p, index) => getPlaylist(p, index))}
-				</View>
+				<View style={HOME_PAGE}>{playlists.map((p, index) => getPlaylist(p, index))}</View>
 			</Screen>
 		</View>
 	)

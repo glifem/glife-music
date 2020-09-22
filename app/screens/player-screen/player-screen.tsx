@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from "react"
 import { View, Image, ViewStyle, TextStyle, ImageStyle } from "react-native"
 import { observer } from "mobx-react-lite"
-import { Screen, Text, Wallpaper } from "../../components"
+import { Screen, Text } from "../../components"
 import { color, spacing } from "../../theme"
 import { useStores } from "../../models"
 import RNColorThief from 'react-native-color-thief';

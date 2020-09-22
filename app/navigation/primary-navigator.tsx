@@ -8,10 +8,11 @@ import React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { HomeScreen } from "../screens"
 
-import SearchIcon from './icons/searchbar.svg'
-import HeartIcon from './icons/heart.svg'
-import HomeIcon from './icons/house-fill.svg'
+import SearchIcon from "./icons/searchbar.svg"
+import HeartIcon from "./icons/heart.svg"
+import HomeIcon from "./icons/house-fill.svg"
 import { SvgProps } from "react-native-svg"
+import { Platform } from "react-native"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -32,32 +33,43 @@ export type PrimaryParamList = {
 	player: undefined
 }
 
-const tabs: { name: string, icon: React.FC<SvgProps>, route: keyof PrimaryParamList, component: React.FC }[] = [
-	{ name: 'Accueil', icon: HomeIcon, route: 'home', component: HomeScreen },
-	{ name: 'Favoris', icon: HeartIcon, route: 'playlist', component: HomeScreen },
-	{ name: 'Rechercher', icon: SearchIcon, route: 'search', component: HomeScreen },
-];
-
+const tabs: {
+  name: string
+  icon: React.FC<SvgProps>
+  route: keyof PrimaryParamList
+  component: React.FC
+}[] = [
+  { name: "Accueil", icon: HomeIcon, route: "home", component: HomeScreen },
+  { name: "Favoris", icon: HeartIcon, route: "playlist", component: HomeScreen },
+  { name: "Rechercher", icon: SearchIcon, route: "search", component: HomeScreen },
+]
 
 const Tab = createBottomTabNavigator<PrimaryParamList>()
 
 export function PrimaryNavigator() {
-	return (
-		<Tab.Navigator
-			screenOptions={{
-			}}
-			tabBarOptions={{
-				safeAreaInsets: { bottom: 4 },
-				activeBackgroundColor: '#161616',
-				inactiveBackgroundColor: '#161616'
-			}}
-		>
-			{tabs.map((tab, key) => <Tab.Screen key={key} options={{
-				tabBarLabel: 'Home',
-				tabBarIcon: ({ color, size }) => <tab.icon fill={color} width={size} height={size} />,
-			}} name={tab.route} component={tab.component} />)}
-		</Tab.Navigator>
-	)
+  return (
+    <Tab.Navigator
+      screenOptions={{}}
+      tabBarOptions={{
+        safeAreaInsets: Platform.OS == "android" && { bottom: 4 },
+        style: {
+          backgroundColor: "#161616",
+        },
+      }}
+    >
+      {tabs.map((tab, key) => (
+        <Tab.Screen
+          key={key}
+          options={{
+            tabBarLabel: tab.name,
+            tabBarIcon: ({ color, size }) => <tab.icon fill={color} width={size} height={size} />,
+          }}
+          name={tab.route}
+          component={tab.component}
+        />
+      ))}
+    </Tab.Navigator>
+  )
 }
 
 /**
