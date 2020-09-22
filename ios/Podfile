@@ -8,6 +8,8 @@ target 'GLifeMusic' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-color-thief', :path => '../node_modules/react-native-color-thief'
+
   target 'GLifeMusicTests' do
     inherit! :complete
     # Pods for testing

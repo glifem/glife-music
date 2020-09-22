@@ -25,6 +25,9 @@ export const MusicModel = types
 				self.list = values as any
 			}
 		},
+		setCurrentMusic(id: number) {
+			self.currentMusicId = id;
+		}
 	}))
 	.actions((self) => ({
 		getMusics: flow(function* () {
@@ -42,6 +45,9 @@ export const MusicModel = types
 				self.setStatus('error')
 			}
 		}),
+		getCurrentMusic: () => {
+			return self.list.find(music => music.id === self.currentMusicId)
+		}
 	}))
 
 export type MusicStore = Instance<typeof MusicModel>

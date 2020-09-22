@@ -8,7 +8,7 @@ import React from "react"
 import { NavigationContainer, NavigationContainerRef, DarkTheme } from "@react-navigation/native"
 
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
-import { PrimaryNavigator } from "./primary-navigator"
+import { HomeNavigator } from "./home-navigator"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -38,7 +38,7 @@ const RootStack = () => {
     >
       <Stack.Screen
         name="primaryStack"
-        component={PrimaryNavigator}
+        component={HomeNavigator}
         options={{
           headerShown: false,
         }}

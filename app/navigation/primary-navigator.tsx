@@ -29,6 +29,7 @@ export type PrimaryParamList = {
 	search: undefined
 	playlist: undefined
 	home: undefined
+	player: undefined
 }
 
 const tabs: { name: string, icon: React.FC<SvgProps>, route: keyof PrimaryParamList, component: React.FC }[] = [

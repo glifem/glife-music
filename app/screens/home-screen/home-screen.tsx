@@ -1,6 +1,5 @@
 import React from "react"
 import { View, Image, ViewStyle, TextStyle, ImageStyle, TouchableOpacity, GestureResponderEvent } from "react-native"
-import { useNavigation } from "@react-navigation/native"
 import { observer } from "mobx-react-lite"
 import { Header, Screen, Text, Wallpaper } from "../../components"
 import { color, spacing } from "../../theme"
@@ -8,6 +7,7 @@ import { useStores } from "../../models"
 import playlists, { IPlaylist } from "../../models/music-store/music-types"
 import { getMusicAuthorNames } from "../../models/music-store/music-selector"
 import { MusicClassModelType } from "../../models/music-store/music-models"
+import { useNavigation } from "@react-navigation/native"
 
 const { S3_URL } = require("../../config/env")
 
@@ -98,6 +98,11 @@ const HEADER_TITLE: TextStyle = {
 
 export const HomeScreen = observer(function HomeScreen() {
 	const { music } = useStores();
+	const navigation = useNavigation();
+
+	const goToMusic = React.useMemo(() => () => navigation.navigate("player"), [
+		navigation,
+	])
 
 	const getPlaylist = (playlist: IPlaylist, index: number) => {
 		const musics = playlist.selector(music);
@@ -106,10 +111,12 @@ export const HomeScreen = observer(function HomeScreen() {
 		const onMusicClick = (e: GestureResponderEvent, id: number) => {
 			e.stopPropagation();
 			e.preventDefault();
+	
+			music.setCurrentMusic(id);
+			goToMusic()
 		};
 
 		const goToPath = () => {
-
 		};
 
 		return (
