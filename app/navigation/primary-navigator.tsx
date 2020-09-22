@@ -13,6 +13,7 @@ import HeartIcon from "./icons/heart.svg"
 import HomeIcon from "./icons/house-fill.svg"
 import { SvgProps } from "react-native-svg"
 import { Platform } from "react-native"
+import SearchScreen from "../screens/search-screen/search-screen"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -41,7 +42,7 @@ const tabs: {
 }[] = [
   { name: "Accueil", icon: HomeIcon, route: "home", component: HomeScreen },
   { name: "Favoris", icon: HeartIcon, route: "playlist", component: HomeScreen },
-  { name: "Rechercher", icon: SearchIcon, route: "search", component: HomeScreen },
+  { name: "Rechercher", icon: SearchIcon, route: "search", component: SearchScreen },
 ]
 
 const Tab = createBottomTabNavigator<PrimaryParamList>()
@@ -51,6 +52,7 @@ export function PrimaryNavigator() {
     <Tab.Navigator
       screenOptions={{}}
       tabBarOptions={{
+        keyboardHidesTabBar: true,
         safeAreaInsets: Platform.OS == "android" && { bottom: 4 },
         style: {
           backgroundColor: "#161616",
