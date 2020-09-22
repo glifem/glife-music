@@ -10551,6 +10551,11 @@ react-native-localize@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-native-localize/-/react-native-localize-1.4.1.tgz#031bd2089f09cc16ee7daee03019684dda60c275"
   integrity sha512-g1L1au6GtCd0Ci6lQ8JVPYgl7uvEtKY2jeVghJcV6qQEN9+qACyqjOIR8pskUyI+qcSj1z4/nZh3IFxDVu1drw==
 
+react-native-platform-searchbar@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-platform-searchbar/-/react-native-platform-searchbar-1.0.1.tgz#d3c8a89897b4767736a8d92e0d755004e2205e9c"
+  integrity sha512-JnMiht7sjSAvh5GyrEagA8V3JXcm0PafqcPfXZ6tXPc/1ZCoCP0T4e8CQ/0zeXPwUHyCHIEHz94j0l6pWK1f4w==
+
 react-native-safe-area-context@0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-0.7.3.tgz#ad6bd4abbabe195332c53810e4ce5851eb21aa2a"
