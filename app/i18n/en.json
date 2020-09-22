@@ -2,7 +2,8 @@
   "common": {
     "ok": "OK!",
     "cancel": "Cancel",
-    "back": "Back"
+    "back": "Back",
+	  "search": "Search"
   },
   "storybook": {
     "placeholder": "Placeholder",
