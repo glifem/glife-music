@@ -6,14 +6,13 @@
  */
 import React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { HomeScreen } from "../screens"
+import { HomeScreen, SearchScreen } from "../screens"
 
 import SearchIcon from "./icons/searchbar.svg"
 import HeartIcon from "./icons/heart.svg"
 import HomeIcon from "./icons/house-fill.svg"
 import { SvgProps } from "react-native-svg"
 import { Platform } from "react-native"
-import SearchScreen from "../screens/search-screen/search-screen"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator

@@ -150,7 +150,6 @@ export const HomeScreen = observer(function HomeScreen() {
         <View style={HOME_PAGE}>{playlists.map((p, index) => getPlaylist(p, index))}</View>
         <PlayerPreviewComponent />
       </Screen>
-
     </View>
   )
 })
