@@ -15,7 +15,7 @@ import PreviousIcon from "./previous.svg"
 import RandomIcon from "./random.svg"
 import RepeatIcon from "./repeat.svg"
 import { useHeaderHeight } from "@react-navigation/stack"
-import TrackPlayer, { usePlaybackState, useProgress } from "react-native-track-player"
+import TrackPlayer, { useProgress } from "react-native-track-player"
 import { formatTimestamp } from "../../utils/time"
 import { TouchableWithoutFeedback } from "react-native-gesture-handler"
 import { useCurrentTrack, useIsPlaying } from "../../utils/track-player"
@@ -182,7 +182,6 @@ const PLAY_BUTTON: ViewStyle = {
   borderColor: "gray",
   borderStyle: "solid",
   borderWidth: 0.75,
-  marginTop: -10,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -194,7 +193,6 @@ export const PlayerScreen: React.FC<any> = observer(function HomeScreen({ naviga
   const [backgroundColor, setBackgroundColor] = useState<string>("black")
   const headerHeight = useHeaderHeight()
 
-  const playerState = usePlaybackState()
   const track = useCurrentTrack()
   const currentMusic = music.getMusicById(Number(track?.id))
   const isPlaying = useIsPlaying()
