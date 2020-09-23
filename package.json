@@ -113,7 +113,8 @@
     "printWidth": 100,
     "semi": false,
     "singleQuote": false,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "tabWidth": 4
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
