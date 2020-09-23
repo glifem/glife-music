@@ -2,6 +2,8 @@ import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 import { PlayerScreen } from "../screens"
 import { PrimaryNavigator } from "./primary-navigator"
+import { Platform } from "react-native"
+import { translate } from "../i18n"
 
 const Stack = createStackNavigator<HomeParamList>()
 
@@ -16,7 +18,7 @@ export function HomeNavigator() {
 			screenOptions={{
 				gestureEnabled: true,
 				headerShown: false,
-				headerTitle: 'Retour',
+				headerTitle: Platform.OS == "android" && translate("common.back"),
 				headerTransparent: true
 			}}
 		>
