@@ -88,7 +88,6 @@ export const HomeScreen = observer(function HomeScreen() {
 	const { music } = useStores();
 	const navigation = useNavigation();
 
-
 	const goToMusic = React.useMemo(() => () => navigation.navigate("player"), [
 		navigation,
 	])
