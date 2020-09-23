@@ -26,7 +26,7 @@ const PlayerPreviewComponent = () => {
     return (
         <View style={{
           height: 55,
-          backgroundColor: '#222327'  
+          backgroundColor: '#202020'  
         }}>
             <View style={{
                 height: 2,

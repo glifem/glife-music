@@ -55,7 +55,7 @@ export function PrimaryNavigator() {
         keyboardHidesTabBar: true,
         safeAreaInsets: Platform.OS == "android" && { bottom: 4 },
         style: {
-          backgroundColor: "#161616",
+          backgroundColor: "#202020",
         },
       }}
     >
