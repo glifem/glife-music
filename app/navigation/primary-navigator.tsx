@@ -6,7 +6,7 @@
  */
 import React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { HomeScreen, SearchScreen } from "../screens"
+import { HomeScreen, PlaylistScreen, SearchScreen } from "../screens"
 
 import SearchIcon from "./icons/searchbar.svg"
 import HeartIcon from "./icons/heart.svg"
@@ -40,7 +40,7 @@ const tabs: {
   component: React.FC
 }[] = [
   { name: "Accueil", icon: HomeIcon, route: "home", component: HomeScreen },
-  { name: "Favoris", icon: HeartIcon, route: "playlist", component: HomeScreen },
+  { name: "Playlist", icon: HeartIcon, route: "playlist", component: PlaylistScreen },
   { name: "Rechercher", icon: SearchIcon, route: "search", component: SearchScreen },
 ]
 
