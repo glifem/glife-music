@@ -9,6 +9,7 @@
 // It's easier just to leave it here.
 import App from "./app/app.tsx"
 import { AppRegistry } from "react-native"
+import TrackPlayer from "react-native-track-player"
 
 /**
  * This needs to match what's found in your app_delegate.m and MainActivity.java.
@@ -22,9 +23,13 @@ const SHOW_STORYBOOK = false
 
 let RootComponent = App
 if (__DEV__ && SHOW_STORYBOOK) {
-  // Only include Storybook if we're in dev mode
-  const { StorybookUIRoot } = require("./storybook")
-  RootComponent = StorybookUIRoot
+    // Only include Storybook if we're in dev mode
+    const { StorybookUIRoot } = require("./storybook")
+    RootComponent = StorybookUIRoot
 }
 
 AppRegistry.registerComponent(APP_NAME, () => RootComponent)
+
+if (!__DEV__ || !SHOW_STORYBOOK) {
+    TrackPlayer.registerPlaybackService(() => require("./service"))
+}
