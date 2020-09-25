@@ -21,13 +21,13 @@ import { S3_URL } from "../../config/env"
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
+	padding: spacing[3],
     backgroundColor: color.transparent,
 }
 
 const BOLD: TextStyle = { fontWeight: "bold" }
 
 const HOME_PAGE: ViewStyle = {
-    padding: spacing[3],
     paddingTop: 0,
 }
 
