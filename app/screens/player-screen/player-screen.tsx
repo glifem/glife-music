@@ -312,7 +312,7 @@ export const PlayerScreen: React.FC<any> = observer(function HomeScreen({ naviga
                                 <PauseFillIcon style={PLAY_ICON} fill="white" />
                             ) : (
                                 <PlayFillIcon
-                                    style={{ ...PLAY_ICON, marginLeft: 5 }}
+                                    style={{ ...PLAY_ICON, marginLeft: 6 }}
                                     fill="white"
                                 />
                             )}
