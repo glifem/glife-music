@@ -119,7 +119,7 @@ const MUSIC_TIMING: ViewStyle = {
 
 const TIMING_TEXT: TextStyle = {
     fontSize: 12,
-    color: "gray",
+    color: "white",
 }
 
 const MUSIC_TIMER_BAR: ViewStyle = {
@@ -128,14 +128,14 @@ const MUSIC_TIMER_BAR: ViewStyle = {
 }
 
 const MUSIC_LINE: ViewStyle = {
-    backgroundColor: "white",
+    backgroundColor: "#3b3132",
     height: 2,
     borderRadius: 2,
     display: "flex",
 }
 
 const MUSIC_LINE_PROGRESS: ViewStyle = {
-    backgroundColor: "#8e8e92",
+    backgroundColor: "white",
     height: 2,
     borderRadius: 2,
     paddingLeft: 1,
@@ -148,7 +148,7 @@ const MUSIC_LINE_CIRCLE: ViewStyle = {
     marginTop: -5,
     marginBottom: -4,
     borderRadius: 32,
-    backgroundColor: "#8e8e92",
+    backgroundColor: "white",
 }
 
 const MUSIC_BUTTONS_FOOTER: ViewStyle = {
@@ -188,7 +188,7 @@ const PLAY_BUTTON: ViewStyle = {
     height: 75,
     width: 75,
     borderRadius: 50,
-    borderColor: "gray",
+    borderColor: "white",
     borderStyle: "solid",
     borderWidth: 0.75,
     display: "flex",
