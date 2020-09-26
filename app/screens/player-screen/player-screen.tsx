@@ -17,7 +17,7 @@ import RepeatIcon from "./repeat.svg"
 import { useHeaderHeight } from "@react-navigation/stack"
 import TrackPlayer, { useProgress } from "react-native-track-player"
 import { formatTimestamp } from "../../utils/time"
-import { TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler"
+import { TouchableOpacity } from "react-native-gesture-handler"
 import { useCurrentTrack, useIsPlaying } from "../../utils/track-player"
 
 const FULL: ViewStyle = { flex: 1 }
