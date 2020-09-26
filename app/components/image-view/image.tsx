@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 import React, { useState } from "react"
 import { ActivityIndicator, Image, View } from "react-native"
 import { ImageProps } from "react-native"

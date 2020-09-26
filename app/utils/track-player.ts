@@ -1,5 +1,6 @@
 import { MusicClassModelType } from "../models/music-store/music-models"
 import TrackPlayer, {
+    Capability,
     Event,
     State,
     Track,
@@ -17,6 +18,17 @@ export const setPlayerQueue = async (
 ) => {
     await TrackPlayer.reset()
     await TrackPlayer.setupPlayer()
+    await TrackPlayer.updateOptions({
+        stopWithApp: true,
+        capabilities: [
+            Capability.Play,
+            Capability.Pause,
+            Capability.SkipToNext,
+            Capability.SkipToPrevious,
+            Capability.Stop,
+        ],
+        compactCapabilities: [Capability.Play, Capability.Pause],
+    })
 
     const tracks: Track[] = musics.map((music) => ({
         id: music.id.toString(),
