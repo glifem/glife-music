@@ -17,7 +17,7 @@ import RepeatIcon from "./repeat.svg"
 import { useHeaderHeight } from "@react-navigation/stack"
 import TrackPlayer, { useProgress } from "react-native-track-player"
 import { formatTimestamp } from "../../utils/time"
-import { TouchableWithoutFeedback } from "react-native-gesture-handler"
+import { TouchableOpacity } from "react-native-gesture-handler"
 import { useCurrentTrack, useIsPlaying } from "../../utils/track-player"
 
 const FULL: ViewStyle = { flex: 1 }
@@ -119,7 +119,7 @@ const MUSIC_TIMING: ViewStyle = {
 
 const TIMING_TEXT: TextStyle = {
     fontSize: 12,
-    color: "gray",
+    color: "white",
 }
 
 const MUSIC_TIMER_BAR: ViewStyle = {
@@ -128,14 +128,14 @@ const MUSIC_TIMER_BAR: ViewStyle = {
 }
 
 const MUSIC_LINE: ViewStyle = {
-    backgroundColor: "white",
+    backgroundColor: "#3b3132",
     height: 2,
     borderRadius: 2,
     display: "flex",
 }
 
 const MUSIC_LINE_PROGRESS: ViewStyle = {
-    backgroundColor: "#8e8e92",
+    backgroundColor: "white",
     height: 2,
     borderRadius: 2,
     paddingLeft: 1,
@@ -143,12 +143,12 @@ const MUSIC_LINE_PROGRESS: ViewStyle = {
 }
 
 const MUSIC_LINE_CIRCLE: ViewStyle = {
-    height: 5,
-    width: 5,
-    marginTop: -3,
-    marginBottom: -3,
+    height: 8,
+    width: 8,
+    marginTop: -5,
+    marginBottom: -4,
     borderRadius: 32,
-    backgroundColor: "#8e8e92",
+    backgroundColor: "white",
 }
 
 const MUSIC_BUTTONS_FOOTER: ViewStyle = {
@@ -159,32 +159,43 @@ const MUSIC_BUTTONS_FOOTER: ViewStyle = {
     alignItems: "center",
     marginTop: 20,
     marginBottom: 20,
+    marginLeft: "auto",
+    marginRight: "auto",
     bottom: 0,
     left: 0,
     height: 75,
+    width: "85%"
 }
 
 const BUTTON_SVG_2: ViewStyle = {
     ...BUTTON_SVG,
-    width: 28,
-    height: 28,
+    width: 24,
+    height: 24,
+}
+
+const BUTTON_SVG_3: ViewStyle = {
+    ...BUTTON_SVG,
+    width: 20,
+    height: 20,
 }
 
 const PLAY_ICON: ViewStyle = {
-    width: 28,
-    height: 28,
+    width: 38,
+    height: 38,
 }
 
 const PLAY_BUTTON: ViewStyle = {
-    height: 57,
-    width: 56,
-    borderRadius: 32,
-    borderColor: "gray",
+    height: 75,
+    width: 75,
+    borderRadius: 50,
+    borderColor: "white",
     borderStyle: "solid",
     borderWidth: 0.75,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginLeft: -15,
+    marginRight: -15,
 }
 
 export const PlayerScreen: React.FC<any> = observer(function HomeScreen({ navigation, route }) {
@@ -198,6 +209,7 @@ export const PlayerScreen: React.FC<any> = observer(function HomeScreen({ naviga
     const isPlaying = useIsPlaying()
     const { position, duration } = useProgress(100)
     const progress = Math.round((position * 100) / duration)
+
 
     useLayoutEffect(() => {
         navigation.setOptions({ tabBarVisible: false })
@@ -284,12 +296,15 @@ export const PlayerScreen: React.FC<any> = observer(function HomeScreen({ naviga
                     </View>
                     <View style={MUSIC_BUTTONS_FOOTER}>
                         <RandomIcon style={BUTTON_SVG_2} fill="white" />
-                        <PreviousIcon
-                            style={BUTTON_SVG_2}
-                            onPress={TrackPlayer.skipToPrevious}
-                            fill="white"
-                        />
-                        <TouchableWithoutFeedback
+                        <TouchableOpacity>
+                            <PreviousIcon
+                                style={BUTTON_SVG_2}
+                                onPress={TrackPlayer.skipToPrevious}
+                                fill="white"
+                            />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
                             onPress={isPlaying ? TrackPlayer.pause : TrackPlayer.play}
                             style={PLAY_BUTTON}
                         >
@@ -297,17 +312,19 @@ export const PlayerScreen: React.FC<any> = observer(function HomeScreen({ naviga
                                 <PauseFillIcon style={PLAY_ICON} fill="white" />
                             ) : (
                                 <PlayFillIcon
-                                    style={{ ...PLAY_ICON, marginLeft: 2 }}
+                                    style={{ ...PLAY_ICON, marginLeft: 6 }}
                                     fill="white"
                                 />
                             )}
-                        </TouchableWithoutFeedback>
-                        <NextIcon
-                            style={BUTTON_SVG_2}
-                            onPress={TrackPlayer.skipToNext}
-                            fill="white"
-                        />
-                        <RepeatIcon style={BUTTON_SVG_2} fill="white" />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <NextIcon
+                                style={BUTTON_SVG_2}
+                                onPress={TrackPlayer.skipToNext}
+                                fill="white"
+                            />
+                        </TouchableOpacity>
+                        <RepeatIcon style={BUTTON_SVG_3} fill="white" />
                     </View>
                 </View>
             </Screen>
