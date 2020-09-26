@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react"
-import { ImageStyle, View, ViewStyle } from "react-native"
+import { ImageStyle, TextStyle, View, ViewStyle } from "react-native"
 import ImageView from "../image-view/image";
 import { Text } from "../text/text";
 import { useCurrentTrack, useIsPlaying } from "../../utils/track-player";
@@ -13,128 +13,141 @@ import PauseFillIcon from "../../screens/player-screen/pause-fill.svg";
 import NextIcon from "../../screens/player-screen/next.svg";
 import UpIcon from "./chevron-up.svg";
 
+const PLAYER_CONTAINER: ViewStyle = {
+	height: 60,
+	//backgroundColor: 'red'
+	backgroundColor: '#202020'
+}
+
+const PLAYER_MAIN_CONTAINER: ViewStyle = {
+	alignItems: "center",
+	flexDirection: 'row'
+}
+
+const PLAYER_MUSIC_INFO: ViewStyle = {
+	...PLAYER_MAIN_CONTAINER
+}
 
 const COVER_IMAGE: ImageStyle = {
-    height: 54,
-    width: 54,
-    resizeMode: "cover",
-    overflow: "hidden",
+	height: "100%",
+	aspectRatio: 1,
+	resizeMode: "cover",
+	overflow: "hidden",
 }
 
 const PLAY_BUTTON: ViewStyle = {
-    height: 37,
-    width: 36,
-    borderRadius: 32,
-    borderColor: "gray",
-    borderStyle: "solid",
-    borderWidth: 0.75,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    marginRight: 10
+	height: 37,
+	width: 36,
+	borderRadius: 32,
+	borderColor: "gray",
+	borderStyle: "solid",
+	borderWidth: 0.75,
+	display: "flex",
+	justifyContent: "center",
+	alignItems: "center",
+	marginRight: 10
 }
 
-const ProgressBar = () => { 
-    const { position, duration } = useProgress(100)
-    const progress = Math.round((position * 100) / duration)
+const NEXT_ICON: ViewStyle = {
+	width: 20,
+	height: 20
+}
 
-    return (
-        <View style={{
-            height: 2,
-            backgroundColor: "gray",
-        }}>
-            <View style={{
-                height: 2,
-                width: progress + '%',
-                backgroundColor: "white"
-            }}>
-            </View>
-        </View>
-    );
+const PLAY_FILL_ICON: ViewStyle = {
+	height: 18,
+	width: 18,
+	marginLeft: 2
+}
+
+const PAUSE_FILL_ICON: ViewStyle = {
+	height: 18,
+	width: 18,
+}
+
+const PLAYER_TEXT_CONTAINER: ViewStyle = {
+	display: "flex",
+	flexDirection: "column",
+	justifyContent: 'center',
+	flex: 1,
+	marginLeft: 15
+}
+
+const ARTIST_TEXT: TextStyle = {
+	color: '#ebebf599'
+}
+
+const RIGHT_BUTTONS_CONTAINER: ViewStyle = {
+	flexDirection: 'row',
+	justifyContent: 'center',
+	alignItems: 'center',
+	marginLeft: 'auto',
+	marginRight: 16
+}
+
+const ProgressBar = () => {
+	const { position, duration } = useProgress(100)
+	const progress = Math.round((position * 100) / duration)
+
+	return (
+		<View style={{
+			height: 2,
+			backgroundColor: "gray",
+		}}>
+			<View style={{
+				height: 2,
+				width: progress + '%',
+				backgroundColor: "white"
+			}}>
+			</View>
+		</View>
+	);
 }
 
 const PlayerPreviewComponent = () => {
-    const track = useCurrentTrack()
-    const isPlaying = useIsPlaying()
-    const navigation = useNavigation()
-    
-    const goToMusic = React.useMemo(() => () => navigation.navigate("player"), [navigation])
+	const track = useCurrentTrack()
+	const isPlaying = useIsPlaying()
+	const navigation = useNavigation()
 
-    if (track == null) {
-        return null
-    }
+	const goToMusic = React.useMemo(() => () => navigation.navigate("player"), [navigation])
 
-    return (
-        <View style={{
-            height: 55,
-            backgroundColor: '#202020'  
-        }}>
+	if (track == null) {
+		return null
+	}
 
-            <ProgressBar />
+	return (
+		<View style={PLAYER_CONTAINER}>
+			<ProgressBar />
 
-            <View style={{
-                display: "flex",
-                alignItems: "center",
-                flexDirection: 'row'
-            }}>
-                <ImageView source={{ uri: track?.artwork as string }} style={COVER_IMAGE} />
+			<View style={PLAYER_MAIN_CONTAINER}>
+				<View style={PLAYER_MUSIC_INFO}>
+					<TouchableOpacity onPress={goToMusic}>
+						<ImageView source={{ uri: track?.artwork as string }} style={COVER_IMAGE} />
+					</TouchableOpacity>
 
-                <TouchableOpacity 
-                    onPress={goToMusic}
-                >
-                    <UpIcon style={{
-                        height: 15,
-                        width: 15,
-                        marginLeft: 15
-                        // marginTop: 15,
-                    }} fill="#ffffff" />
-                </TouchableOpacity>
+					<TouchableOpacity style={PLAYER_TEXT_CONTAINER} onPress={goToMusic}>
+						<Text numberOfLines={1}>{track.title}</Text>
+						<Text numberOfLines={1} style={ARTIST_TEXT}>{track.artist}</Text>
+					</TouchableOpacity>
+				</View>
 
-                <View style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    flex: 1,
-                    marginLeft: 15
-                }}>
-                    <Text numberOfLines={1}>{track.title}</Text>
-                    <Text numberOfLines={1} style={{
-                        color: '#ebebf599'
-                    }}>{track.artist}</Text>
-                </View>
-                
-                <TouchableOpacity 
-                    onPress={isPlaying ? TrackPlayer.pause : TrackPlayer.play}
-                >
-                    <View style={PLAY_BUTTON}>
-                        {isPlaying ? (
-                            <PauseFillIcon style={{
-                                height: 18,
-                                width: 18,
-                            }} fill="white" />
-                        ) : (
-                            <PlayFillIcon style={{
-                                height: 18,
-                                width: 18,
-                                marginLeft: 2
-                            }} fill="#ffffff" />
-                        )}
-                    </View>
-                </TouchableOpacity>
+				<View style={RIGHT_BUTTONS_CONTAINER}>
+					<View style={PLAY_BUTTON}>
+						{isPlaying ? (
+							<PauseFillIcon onPress={TrackPlayer.pause} style={PAUSE_FILL_ICON} fill="white" />
+						) : (
+								<PlayFillIcon onPress={TrackPlayer.play} style={PLAY_FILL_ICON} fill="#ffffff" />
+							)}
+					</View>
 
-                <TouchableOpacity>
-                    <NextIcon
-                        style={{
-                            width: 20,
-                            height: 20,
-                            marginRight: 12
-                        }}
-                        onPress={TrackPlayer.skipToNext}
-                        fill="white"
-                    />
-                </TouchableOpacity>
-            </View>
-        </View>
-    );
+					<NextIcon
+						style={NEXT_ICON}
+						onPress={TrackPlayer.skipToNext}
+						fill="white"
+					/>
+				</View>
+			</View>
+		</View>
+	);
 }
 
 export default PlayerPreviewComponent;

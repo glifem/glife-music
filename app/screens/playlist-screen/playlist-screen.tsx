@@ -89,7 +89,7 @@ const AUTHORS: TextStyle = {
 }
 
 const HEADER: TextStyle = {
-	paddingTop: spacing[3],
+    paddingTop: spacing[1],
 }
 const HEADER_TITLE: TextStyle = {
 	...BOLD,
