@@ -17,6 +17,7 @@ import { MusicClassModelType } from "../../models/music-store/music-models"
 import ImageView from "../../components/image-view/image"
 import { useNavigation } from "@react-navigation/native"
 import { setPlayerQueue } from "../../utils/track-player"
+import PlayerPreviewComponent from "../../components/player-preview/player-preview"
 import { S3_URL } from "../../config/env"
 
 const FULL: ViewStyle = { flex: 1 }
@@ -151,6 +152,7 @@ export const HomeScreen = observer(function HomeScreen() {
                 <Header headerTx="homeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
                 {/* Playlists container */}
                 <View style={HOME_PAGE}>{playlists.map((p, index) => getPlaylist(p, index))}</View>
+                <PlayerPreviewComponent />
             </Screen>
         </View>
     )
