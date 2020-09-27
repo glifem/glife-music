@@ -173,8 +173,8 @@ const PLAY_BUTTON: ViewStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 8,
+    marginRight: 8,
 }
 
 export const ProgressBar: React.FC<any> = () => {
