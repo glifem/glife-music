@@ -17,25 +17,24 @@ import { MusicClassModelType } from "../../models/music-store/music-models"
 import ImageView from "../../components/image-view/image"
 import { useNavigation } from "@react-navigation/native"
 import { setPlayerQueue } from "../../utils/track-player"
-import PlayerPreviewComponent from "../../components/player-preview/player-preview"
 import { S3_URL } from "../../config/env"
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
+	padding: spacing[3],
     backgroundColor: color.transparent,
 }
 
 const BOLD: TextStyle = { fontWeight: "bold" }
 
 const HOME_PAGE: ViewStyle = {
-    padding: spacing[3],
     paddingTop: 0,
 }
 
 const H1: TextStyle = {
     fontSize: 22,
     fontWeight: "bold",
-    marginTop: 8,
+    marginTop: 5,
     marginBottom: 5,
 }
 
@@ -82,7 +81,7 @@ const H3_ARTIST: TextStyle = {
 }
 
 const HEADER: TextStyle = {
-    paddingTop: spacing[3],
+    paddingTop: spacing[1],
 }
 const HEADER_TITLE: TextStyle = {
     ...BOLD,
@@ -152,7 +151,6 @@ export const HomeScreen = observer(function HomeScreen() {
                 <Header headerTx="homeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
                 {/* Playlists container */}
                 <View style={HOME_PAGE}>{playlists.map((p, index) => getPlaylist(p, index))}</View>
-                <PlayerPreviewComponent />
             </Screen>
         </View>
     )
