@@ -155,7 +155,7 @@ const MUSIC_BUTTONS_FOOTER: ViewStyle = {
 const PLAYER_BUTTON: ViewStyle = {
     width: 24,
     height: 24,
-    marginHorizontal: 20,
+    marginHorizontal: 12.5,
 }
 
 const PLAY_ICON: ViewStyle = {
@@ -173,8 +173,8 @@ const PLAY_BUTTON: ViewStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: -15,
-    marginRight: -15,
+    marginLeft: 5,
+    marginRight: 5,
 }
 
 export const ProgressBar: React.FC<any> = () => {
