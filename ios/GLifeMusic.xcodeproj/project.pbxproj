@@ -8,12 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* GLifeMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* GLifeMusicTests.m */; };
-		0A22C340389A4929A1FE3E00 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B5CFE0D8E4031931F80C0 /* SF-Pro-Text-Bold.otf */; };
-		0F078BD1CFEF4B6D98A4A681 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B3F3ED521F4F4BBC8F5AC868 /* SF-Pro-Text-Regular.otf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		162A71944E14462FB593D899 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE4A4B7CBF7A46A593C2E3F0 /* SF-Pro-Display-Semibold.otf */; };
 		2CBD457D20F6592F6027A743 /* libPods-GLifeMusic-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5926B029091F95FF21DCE8AE /* libPods-GLifeMusic-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -21,16 +18,9 @@
 		2DCD954D1E0B4F2C00145EB5 /* GLifeMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* GLifeMusicTests.m */; };
 		381880BF9BB402971FC813FE /* libPods-GLifeMusic-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F81094C2A9436E2C3191130 /* libPods-GLifeMusic-tvOS.a */; };
 		3D6438E1251AA89A00429111 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6438E0251AA89A00429111 /* dummy.swift */; };
-		7D2EEF0ADDA1403987657C76 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB6B7B3628994DB189B30B23 /* SF-Pro-Text-Medium.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		85989E45C02747D88D36581F /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C550C0EAF9CB464ABDA13F6E /* SF-Pro-Display-Regular.otf */; };
 		87AB0357AA8C6CEF785459DF /* libPods-GLifeMusic-GLifeMusicTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1B2A5C7C69500CE0C94576 /* libPods-GLifeMusic-GLifeMusicTests.a */; };
-		D231C09F473646BE963F22D9 /* SF-Pro-Text-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FACE26B305C4CEB8CDCF110 /* SF-Pro-Text-Light.ttf */; };
-		E06AA0850CDF4798A85D5064 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF0964969AD8474CAB6DCB4D /* SF-Pro-Text-Semibold.otf */; };
-		EBF9A6F803DE438882C73EB3 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C33B5A1D5B1D49ACB1F2EB8E /* SF-Pro-Display-Light.otf */; };
 		ECCCD5369D8A71CBDADCDB9C /* libPods-GLifeMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 390703462DD27BC00E4F35CD /* libPods-GLifeMusic.a */; };
-		F2E29B37B43947C1AA52FC5D /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2018C32B13354F78AD23F9E5 /* SF-Pro-Display-Ultralight.otf */; };
-		F6FB856615F24FD8BEA4DB2A /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2368AE7C696F45038E33541B /* SF-Pro-Display-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,16 +374,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				F6FB856615F24FD8BEA4DB2A /* SF-Pro-Display-Bold.otf in Resources */,
-				EBF9A6F803DE438882C73EB3 /* SF-Pro-Display-Light.otf in Resources */,
-				85989E45C02747D88D36581F /* SF-Pro-Display-Regular.otf in Resources */,
-				162A71944E14462FB593D899 /* SF-Pro-Display-Semibold.otf in Resources */,
-				F2E29B37B43947C1AA52FC5D /* SF-Pro-Display-Ultralight.otf in Resources */,
-				0A22C340389A4929A1FE3E00 /* SF-Pro-Text-Bold.otf in Resources */,
-				D231C09F473646BE963F22D9 /* SF-Pro-Text-Light.ttf in Resources */,
-				7D2EEF0ADDA1403987657C76 /* SF-Pro-Text-Medium.otf in Resources */,
-				0F078BD1CFEF4B6D98A4A681 /* SF-Pro-Text-Regular.otf in Resources */,
-				E06AA0850CDF4798A85D5064 /* SF-Pro-Text-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
