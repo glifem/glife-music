@@ -1,12 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import { observer } from "mobx-react-lite"
 import { useStores } from "../../models"
 import { Header, Screen, Wallpaper } from "../../components"
 import {
-	FlatList,
 	GestureResponderEvent,
 	ImageStyle,
-	Platform,
 	TextStyle,
 	TouchableOpacity,
 	View,
@@ -16,6 +14,7 @@ import { Text } from "react-native"
 import { color, spacing } from "../../theme"
 import ImageView from "../../components/image-view/image"
 import { useNavigation } from "@react-navigation/native"
+import PlusIcon from "./plus.svg"
 
 const { S3_URL } = require("../../config/env")
 
@@ -29,12 +28,6 @@ const CONTAINER: ViewStyle = {
 const FULL: ViewStyle = {
 	display: 'flex',
 	flex: 1,
-}
-
-const PLAYLIST_PAGE: ViewStyle = {
-	display: 'flex',
-	padding: spacing[3],
-	flex: 1
 }
 
 const PLAYLISTS_CONTAINER: ViewStyle = {
@@ -60,6 +53,8 @@ const COVER_IMAGE: ImageStyle = {
 	borderRadius: 5,
 	height: 60,
 	width: 60,
+	justifyContent: 'center',
+	alignItems: 'center',
 	resizeMode: "cover",
 }
 
@@ -89,7 +84,7 @@ const AUTHORS: TextStyle = {
 }
 
 const HEADER: TextStyle = {
-    paddingTop: spacing[1],
+	paddingTop: spacing[1],
 }
 const HEADER_TITLE: TextStyle = {
 	...BOLD,
@@ -99,6 +94,10 @@ const HEADER_TITLE: TextStyle = {
 	letterSpacing: 1.5,
 }
 
+const PLUS_ICON: ViewStyle = {
+    width: 50,
+    height: 50,
+}
 
 const officialPlaylist = [
 	{ id: 1, title: 'Flashland Records', songs: [1, 1, 1, 1, 1] },
@@ -114,25 +113,29 @@ const userPlaylists = [
 	{ id: 200, title: 'DRR DRR', songs: [1, 1] },
 ]
 
-export const PlaylistScreen = observer(function SearchScreen() {
+export const PlaylistsScreen = observer(function SearchScreen() {
 	const { music } = useStores()
 	const navigation = useNavigation()
 
-	const goToMusic = React.useMemo(() => () => navigation.navigate("player"), [
+	const goToCreatePlaylist = React.useMemo(() => () => navigation.navigate("create-playlist"), [
 		navigation,
 	])
 
-	const onMusicClick = (e: GestureResponderEvent, id: number) => {
+	const goToPlaylist = React.useMemo(() => () => navigation.navigate("create-playlist"), [
+		navigation,
+	])
+
+	const onPlaylistClick = (e: GestureResponderEvent, id: number) => {
 		e.stopPropagation();
 		e.preventDefault();
 
 		//music.setCurrentMusic(id);
-		//goToMusic()
+		goToPlaylist()
 	};
 
 	const renderPlaylist = (item, key) => {
 		return (
-			<TouchableOpacity key={key} style={ROW} onPress={e => onMusicClick(e, item.id)}>
+			<TouchableOpacity key={key} style={ROW} onPress={e => onPlaylistClick(e, item.id)}>
 				<ImageView style={COVER_IMAGE} source={{ uri: `${S3_URL}/music/${item.id}.png` }} />
 				<View style={INFOS}>
 					<Text style={TITLE}>{item.title}</Text>
@@ -142,25 +145,35 @@ export const PlaylistScreen = observer(function SearchScreen() {
 		)
 	}
 
-	const displayUserPlaylists = userPlaylists.length > 0;
-
 	return (
 		<View style={FULL}>
 			<Wallpaper />
 			<Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
 				<Header headerTx="homeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
-				{displayUserPlaylists ? (
-					<View style={PLAYLISTS_CONTAINER}>
-						<Text numberOfLines={1} style={H3}>Mes playlists</Text>
-						<View style={PLAYLISTS_ITEM_CONTAINER}>
-							{userPlaylists.map((pl, key) => renderPlaylist(pl, key))}
-						</View>
-					</View>
-				) : null}
-				<View style={{ ...PLAYLISTS_CONTAINER, ...(displayUserPlaylists ? { marginTop: 0 } : {}) }}>
+				{/* Officials playlists */}
+				<View style={PLAYLISTS_CONTAINER}>
 					<Text numberOfLines={1} style={H3}>Playlists officielles</Text>
 					<View style={PLAYLISTS_ITEM_CONTAINER}>
 						{officialPlaylist.map((pl, key) => renderPlaylist(pl, key))}
+					</View>
+				</View>
+				
+				{/* Personal playlists */}
+				<View style={{ ...PLAYLISTS_CONTAINER, marginTop: 0 }}>
+					<Text numberOfLines={1} style={H3}>Mes playlists</Text>
+					<View style={PLAYLISTS_ITEM_CONTAINER}>
+						{/* Create a playlist button */}
+						<TouchableOpacity style={ROW} onPress={e => goToCreatePlaylist()}>
+							<View style={COVER_IMAGE}>
+                    			<PlusIcon style={PLUS_ICON} fill="white" />
+							</View>
+							<View style={INFOS}>
+								<Text style={TITLE}>Ajouter une playlist</Text>
+								<Text style={AUTHORS}>Personnalisez votre expérience</Text>
+							</View>
+						</TouchableOpacity>
+						{/* User's playlists */}
+						{userPlaylists.map((pl, key) => renderPlaylist(pl, key))}
 					</View>
 				</View>
 			</Screen>

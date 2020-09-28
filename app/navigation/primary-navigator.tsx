@@ -6,7 +6,7 @@
  */
 import React from "react"
 import { BottomTabBar, BottomTabBarOptions, BottomTabBarProps, createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { HomeScreen, PlaylistScreen, SearchScreen } from "../screens"
+import { HomeScreen, PlaylistsScreen, SearchScreen } from "../screens"
 
 import SearchIcon from "./icons/searchbar.svg"
 import HeartIcon from "./icons/heart.svg"
@@ -29,7 +29,7 @@ import PlayerPreviewComponent from "../components/player-preview/player-preview"
  */
 export type PrimaryParamList = {
 	search: undefined
-	playlist: undefined
+	playlists: undefined
 	home: undefined
 	player: undefined
 }
@@ -41,7 +41,7 @@ const tabs: {
 	component: React.FC
 }[] = [
 		{ name: "Accueil", icon: HomeIcon, route: "home", component: HomeScreen },
-		{ name: "Playlist", icon: HeartIcon, route: "playlist", component: PlaylistScreen },
+		{ name: "Playlists", icon: HeartIcon, route: "playlists", component: PlaylistsScreen },
 		{ name: "Rechercher", icon: SearchIcon, route: "search", component: SearchScreen },
 	]
 
