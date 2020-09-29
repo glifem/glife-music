@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react"
-import { ImageStyle, TextStyle, View, ViewStyle } from "react-native"
+import { TextStyle, View, ViewStyle } from "react-native"
 import ImageView from "../image-view/image";
 import { Text } from "../text/text";
 import { useCurrentTrack, useIsPlaying } from "../../utils/track-player";
@@ -11,7 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import PlayFillIcon from "../../screens/player-screen/play-fill.svg";
 import PauseFillIcon from "../../screens/player-screen/pause-fill.svg";
 import NextIcon from "../../screens/player-screen/next.svg";
-import UpIcon from "./chevron-up.svg";
+import FastImage from "react-native-fast-image";
 
 const PLAYER_CONTAINER: ViewStyle = {
 	height: 60,
@@ -28,7 +28,7 @@ const PLAYER_MUSIC_INFO: ViewStyle = {
 	...PLAYER_MAIN_CONTAINER
 }
 
-const COVER_IMAGE: ImageStyle = {
+const COVER_IMAGE: any = {
 	height: "100%",
 	aspectRatio: 1,
 	resizeMode: "cover",
@@ -121,7 +121,7 @@ const PlayerPreviewComponent = () => {
 			<View style={PLAYER_MAIN_CONTAINER}>
 				<View style={PLAYER_MUSIC_INFO}>
 					<TouchableOpacity onPress={goToMusic}>
-						<ImageView source={{ uri: track?.artwork as string }} style={COVER_IMAGE} />
+						<ImageView source={{ uri: track?.artwork as string, priority: FastImage.priority.high }} style={COVER_IMAGE} />
 					</TouchableOpacity>
 
 					<TouchableOpacity style={PLAYER_TEXT_CONTAINER} onPress={goToMusic}>

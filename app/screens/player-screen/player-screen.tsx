@@ -1,12 +1,10 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react"
 import {
-    View,
-    Image,
-    ViewStyle,
-    TextStyle,
-    ImageStyle,
-    GestureResponderEvent,
-    Dimensions,
+	View,
+	ViewStyle,
+	TextStyle,
+	GestureResponderEvent,
+	Dimensions,
 } from "react-native"
 import { observer } from "mobx-react-lite"
 import { Screen, Text } from "../../components"
@@ -27,10 +25,11 @@ import TrackPlayer, { useProgress } from "react-native-track-player"
 import { formatTimestamp } from "../../utils/time"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import { useCurrentTrack, useIsPlaying } from "../../utils/track-player"
+import ImageView from "../../components/image-view/image"
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
-    backgroundColor: color.transparent,
+	backgroundColor: color.transparent,
 }
 
 const BOLD: TextStyle = { fontWeight: "bold" }
@@ -38,118 +37,118 @@ const BOLD: TextStyle = { fontWeight: "bold" }
 const PLAYER_PAGE_PADDING = spacing[5]
 
 const PLAYER_PAGE: ViewStyle = {
-    backgroundColor: color.transparent,
-    paddingHorizontal: PLAYER_PAGE_PADDING,
-    display: "flex",
+	backgroundColor: color.transparent,
+	paddingHorizontal: PLAYER_PAGE_PADDING,
+	display: "flex",
 }
 
 const MUSIC_INFOS: ViewStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
-    marginTop: 20,
+	display: "flex",
+	justifyContent: "space-between",
+	flexDirection: "row",
+	marginTop: 20,
 }
 
 const MUSIC_STREAM: ViewStyle = {
-    display: "flex",
-    flexDirection: "row",
+	display: "flex",
+	flexDirection: "row",
 }
 
 const MUSIC_LIKES: ViewStyle = {
-    display: "flex",
-    flexDirection: "row",
+	display: "flex",
+	flexDirection: "row",
 }
 
 const H2: TextStyle = {
-    fontSize: 20,
-    margin: 0,
-    fontWeight: "bold",
-    textAlign: "center",
+	fontSize: 20,
+	margin: 0,
+	fontWeight: "bold",
+	textAlign: "center",
 }
 
 const H3: TextStyle = {
-    fontSize: 17,
-    margin: 0,
-    fontWeight: "bold",
-    textAlign: "center",
+	fontSize: 17,
+	margin: 0,
+	fontWeight: "bold",
+	textAlign: "center",
 }
 
 const H4: TextStyle = {
-    fontSize: 15,
-    margin: 0,
-    textAlign: "center",
+	fontSize: 15,
+	margin: 0,
+	textAlign: "center",
 }
 
 const MUSIC_INFOS_FOOTER: ViewStyle = {
-    ...MUSIC_INFOS,
-    marginTop: 0,
-    marginBottom: 20,
+	...MUSIC_INFOS,
+	marginTop: 0,
+	marginBottom: 20,
 }
 const MUSIC_COVER: ViewStyle = {}
 
-const COVER_IMAGE: ImageStyle = {
-    width: "100%",
-    aspectRatio: 1,
-    borderRadius: 5,
-    marginBottom: 2,
+const COVER_IMAGE: any = {
+	width: "100%",
+	aspectRatio: 1,
+	borderRadius: 5,
+	marginBottom: 2,
 }
 
 const MUSIC_DETAILS: ViewStyle = {
-    ...MUSIC_INFOS,
+	...MUSIC_INFOS,
 }
 
 const MUSIC_DETAILS_TEXT: ViewStyle = {
-    marginTop: -6,
+	marginTop: -6,
 }
 
 const BUTTON_SVG: ViewStyle = {
-    width: 26,
-    height: 26,
+	width: 26,
+	height: 26,
 }
 
 const MUSIC_TIMING: ViewStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: 10,
-    flexDirection: "row",
+	display: "flex",
+	justifyContent: "space-between",
+	marginTop: 10,
+	flexDirection: "row",
 }
 
 const TIMING_TEXT: TextStyle = {
-    fontSize: 12,
-    color: "white",
+	fontSize: 12,
+	color: "white",
 }
 
 const MUSIC_LINE: ViewStyle = {
-    backgroundColor: "#3b3132",
-    marginVertical: 5,
-    height: 2,
-    borderRadius: 2,
-    display: "flex",
+	backgroundColor: "#3b3132",
+	marginVertical: 5,
+	height: 2,
+	borderRadius: 2,
+	display: "flex",
 }
 
 const MUSIC_LINE_PROGRESS: ViewStyle = {
-    backgroundColor: "white",
-    height: 2,
-    borderRadius: 2,
-    paddingLeft: 1,
-    width: "0%",
+	backgroundColor: "white",
+	height: 2,
+	borderRadius: 2,
+	paddingLeft: 1,
+	width: "0%",
 }
 
 const MUSIC_LINE_CIRCLE: ViewStyle = {
-    height: 8,
-    width: 8,
-    marginTop: -5,
-    marginBottom: -4,
-    borderRadius: 32,
-    backgroundColor: "white",
+	height: 8,
+	width: 8,
+	marginTop: -5,
+	marginBottom: -4,
+	borderRadius: 32,
+	backgroundColor: "white",
 }
 
 const MUSIC_BUTTONS_FOOTER: ViewStyle = {
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "row",
-    alignItems: "center",
-    paddingVertical: 20,
+	display: "flex",
+	justifyContent: "center",
+	flexDirection: "row",
+	alignItems: "center",
+	paddingVertical: 20,
 }
 
 const PLAYER_BUTTON: ViewStyle = {
@@ -159,8 +158,8 @@ const PLAYER_BUTTON: ViewStyle = {
 }
 
 const PLAY_ICON: ViewStyle = {
-    width: 38,
-    height: 38,
+	width: 38,
+	height: 38,
 }
 
 const PLAY_BUTTON: ViewStyle = {
@@ -178,68 +177,68 @@ const PLAY_BUTTON: ViewStyle = {
 }
 
 export const ProgressBar: React.FC<any> = () => {
-    const { position, duration } = useProgress(250)
-    const [dragPos, setDragPros] = useState(null)
-    const [draging, setDraging] = useState(false)
+	const { position, duration } = useProgress(250)
+	const [dragPos, setDragPros] = useState(null)
+	const [draging, setDraging] = useState(false)
 
-    const lineWidth = useMemo(() => Dimensions.get("window").width - PLAYER_PAGE_PADDING * 2, [])
+	const lineWidth = useMemo(() => Dimensions.get("window").width - PLAYER_PAGE_PADDING * 2, [])
 
-    const progress = dragPos
-        ? Math.round((dragPos * 100) / lineWidth)
-        : Math.round((position * 100) / duration)
+	const progress = dragPos
+		? Math.round((dragPos * 100) / lineWidth)
+		: Math.round((position * 100) / duration)
 
-    const onTouchStart = (e: GestureResponderEvent) => {
-        setDraging(true)
-        onTouch(e)
-    }
+	const onTouchStart = (e: GestureResponderEvent) => {
+		setDraging(true)
+		onTouch(e)
+	}
 
-    const onTouch = (e: GestureResponderEvent) => {
-        e.stopPropagation()
-        e.preventDefault()
+	const onTouch = (e: GestureResponderEvent) => {
+		e.stopPropagation()
+		e.preventDefault()
 
-        if (e.nativeEvent.pageX < PLAYER_PAGE_PADDING) {
-            setDragPros(0)
-        } else if (e.nativeEvent.pageX > lineWidth + PLAYER_PAGE_PADDING) {
-            setDragPros(lineWidth)
-        } else {
-            setDragPros(e.nativeEvent.pageX - PLAYER_PAGE_PADDING)
-        }
-    }
+		if (e.nativeEvent.pageX < PLAYER_PAGE_PADDING) {
+			setDragPros(0)
+		} else if (e.nativeEvent.pageX > lineWidth + PLAYER_PAGE_PADDING) {
+			setDragPros(lineWidth)
+		} else {
+			setDragPros(e.nativeEvent.pageX - PLAYER_PAGE_PADDING)
+		}
+	}
 
-    const onTouchEnd = async () => {
-        let didCancel = false
-        await TrackPlayer.seekTo((dragPos * duration) / lineWidth)
-        !didCancel && setDraging(false)
-        return () => (didCancel = true)
-    }
+	const onTouchEnd = async () => {
+		let didCancel = false
+		await TrackPlayer.seekTo((dragPos * duration) / lineWidth)
+		!didCancel && setDraging(false)
+		return () => (didCancel = true)
+	}
 
-    //wait for position to be updated, preventing progress to go back to his inital position after drag end
-    useEffect(() => {
-        !draging && setDragPros(null)
-    }, [position])
+	//wait for position to be updated, preventing progress to go back to his inital position after drag end
+	useEffect(() => {
+		!draging && setDragPros(null)
+	}, [position])
 
-    return (
-        <View
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouch}
-            onTouchEnd={onTouchEnd}
-            hitSlop={{ top: 15, right: 5, bottom: 15, left: 5 }}
-        >
-            <View style={MUSIC_TIMING}>
-                <Text style={TIMING_TEXT}>{formatTimestamp(position)}</Text>
-                <Text style={TIMING_TEXT}>{formatTimestamp(duration)}</Text>
-            </View>
-            <View style={MUSIC_LINE}>
-                <View
-                    style={{
-                        ...MUSIC_LINE_PROGRESS,
-                        width: progress + "%",
-                    }}
-                ></View>
-                <View style={{ ...MUSIC_LINE_CIRCLE, marginLeft: progress + "%" }}></View>
-            </View>
-        </View>
-    )
+	return (
+		<View
+			onTouchStart={onTouchStart}
+			onTouchMove={onTouch}
+			onTouchEnd={onTouchEnd}
+			hitSlop={{ top: 15, right: 5, bottom: 15, left: 5 }}
+		>
+			<View style={MUSIC_TIMING}>
+				<Text style={TIMING_TEXT}>{formatTimestamp(position)}</Text>
+				<Text style={TIMING_TEXT}>{formatTimestamp(duration)}</Text>
+			</View>
+			<View style={MUSIC_LINE}>
+				<View
+					style={{
+						...MUSIC_LINE_PROGRESS,
+						width: progress + "%",
+					}}
+				></View>
+				<View style={{ ...MUSIC_LINE_CIRCLE, marginLeft: progress + "%" }}></View>
+			</View>
+		</View>
+	)
 }
 
 export const PlayerScreen: React.FC<any> = observer(function HomeScreen({ navigation, route }) {
