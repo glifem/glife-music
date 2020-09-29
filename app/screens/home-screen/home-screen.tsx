@@ -3,9 +3,8 @@ import {
     View,
     ViewStyle,
     TextStyle,
-    ImageStyle,
     TouchableOpacity,
-    GestureResponderEvent,
+    GestureResponderEvent
 } from "react-native"
 import { observer } from "mobx-react-lite"
 import { Header, Screen, Text, Wallpaper } from "../../components"
@@ -56,7 +55,7 @@ const MUSIC: ViewStyle = {
     flex: 1,
 }
 
-const COVER_IMAGE: ImageStyle = {
+const COVER_IMAGE: any = {
     aspectRatio: 1,
     borderRadius: 5,
     marginBottom: 2,

@@ -4,7 +4,6 @@ import { useStores } from "../../models"
 import { Header, Screen, Wallpaper } from "../../components"
 import {
 	GestureResponderEvent,
-	ImageStyle,
 	TextStyle,
 	TouchableOpacity,
 	View,
@@ -15,6 +14,7 @@ import { color, spacing } from "../../theme"
 import ImageView from "../../components/image-view/image"
 import { useNavigation } from "@react-navigation/native"
 import PlusIcon from "./plus.svg"
+import FastImage from "react-native-fast-image"
 
 const { S3_URL } = require("../../config/env")
 
@@ -48,7 +48,7 @@ const H3: TextStyle = {
 	...BOLD,
 }
 
-const COVER_IMAGE: ImageStyle = {
+const COVER_IMAGE: any = {
 	aspectRatio: 1,
 	borderRadius: 5,
 	height: 60,
@@ -136,7 +136,7 @@ export const PlaylistsScreen = observer(function SearchScreen() {
 	const renderPlaylist = (item, key) => {
 		return (
 			<TouchableOpacity key={key} style={ROW} onPress={e => onPlaylistClick(e, item.id)}>
-				<ImageView style={COVER_IMAGE} source={{ uri: `${S3_URL}/music/${item.id}.png` }} />
+				<ImageView style={COVER_IMAGE} source={{ uri: `${S3_URL}/music/${item.id}.png`, priority: FastImage.priority.high, }} />
 				<View style={INFOS}>
 					<Text style={TITLE}>{item.title}</Text>
 					<Text style={AUTHORS}>{item.songs.length} musique{item.songs.length <= 1 ? '' : 's'}</Text>

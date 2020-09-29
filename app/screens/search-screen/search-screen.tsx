@@ -5,7 +5,6 @@ import { Screen, Wallpaper } from "../../components"
 import {
     FlatList,
     GestureResponderEvent,
-    ImageStyle,
     Platform,
     TextStyle,
     TouchableOpacity,
@@ -27,7 +26,7 @@ const SCREEN_CONTAINER: ViewStyle = {
     flex: 1,
 }
 
-const COVER_IMAGE: ImageStyle = {
+const COVER_IMAGE: any = {
     aspectRatio: 1,
     borderRadius: 5,
     height: 60,
