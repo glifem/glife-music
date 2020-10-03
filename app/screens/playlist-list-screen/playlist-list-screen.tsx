@@ -113,7 +113,7 @@ const userPlaylists = [
 	{ id: 200, title: 'DRR DRR', songs: [1, 1] },
 ]
 
-export const PlaylistsScreen = observer(function SearchScreen() {
+export const PlaylistListScreen = observer(function SearchScreen() {
 	const { music } = useStores()
 	const navigation = useNavigation()
 
@@ -121,7 +121,7 @@ export const PlaylistsScreen = observer(function SearchScreen() {
 		navigation,
 	])
 
-	const goToPlaylist = React.useMemo(() => () => navigation.navigate("create-playlist"), [
+	const goToPlaylist = React.useMemo(() => () => navigation.navigate("playlist"), [
 		navigation,
 	])
 
@@ -129,7 +129,7 @@ export const PlaylistsScreen = observer(function SearchScreen() {
 		e.stopPropagation();
 		e.preventDefault();
 
-		//music.setCurrentMusic(id);
+		//music.setCurrentPlaylist(id);
 		goToPlaylist()
 	};
 

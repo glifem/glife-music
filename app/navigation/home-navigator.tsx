@@ -1,6 +1,6 @@
 import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
-import { PlayerScreen } from "../screens"
+import { PlayerScreen, PlaylistScreen } from "../screens"
 import { PrimaryNavigator } from "./primary-navigator"
 import { Platform } from "react-native"
 import { translate } from "../i18n"
@@ -10,6 +10,7 @@ const Stack = createStackNavigator<HomeParamList>()
 export type HomeParamList = {
     home: undefined
     player: undefined
+    playlist: undefined
 }
 
 export function HomeNavigator() {
@@ -24,6 +25,7 @@ export function HomeNavigator() {
         >
             <Stack.Screen name="home" component={PrimaryNavigator} />
             <Stack.Screen name="player" component={PlayerScreen} options={{ headerShown: true }} />
+            <Stack.Screen name="playlist" component={PlaylistScreen} options={{ headerShown: true }} />
         </Stack.Navigator>
     )
 }

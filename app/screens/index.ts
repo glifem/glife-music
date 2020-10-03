@@ -1,4 +1,5 @@
 export * from "./home-screen/home-screen"
 export * from "./player-screen/player-screen"
 export * from "./search-screen/search-screen"
-export * from "./playlists-screen/playlists-screen"
+export * from "./playlist-list-screen/playlist-list-screen"
+export * from "./playlist-screen/playlist-screen"
