@@ -3,7 +3,6 @@ import { observer } from "mobx-react-lite"
 import { useStores } from "../../models"
 import { Header, Screen, Wallpaper } from "../../components"
 import {
-	GestureResponderEvent,
 	Text,
 	TextStyle,
 	TouchableOpacity,
@@ -14,97 +13,157 @@ import { color, spacing } from "../../theme"
 import { useNavigation } from "@react-navigation/native"
 import FastImage from "react-native-fast-image"
 import ImageView from "../../components/image-view/image"
-import { getMusicAuthorNames, searchMusic } from "../../models/music-store/music-selector"
-import { setPlayerQueue } from "../../utils/track-player"
+import MoreIcon from "../../screens/playlist-screen/more.svg";
+
 const { S3_URL } = require("../../config/env")
 
-const BOLD: TextStyle = { fontWeight: "bold" }
-
 const CONTAINER: ViewStyle = {
-	padding: spacing[3],
+	padding: spacing[4],
 	backgroundColor: color.transparent,
 }
 
 const FULL: ViewStyle = {
 	display: 'flex',
 	flex: 1,
+	paddingTop: spacing[7],
 }
 
-const HEADER: TextStyle = {
-	paddingTop: spacing[1],
-}
-const HEADER_TITLE: TextStyle = {
-	...BOLD,
-	fontSize: 12,
-	lineHeight: 15,
-	textAlign: "center",
-	letterSpacing: 1.5,
+const PLAYLIST_INFO_CONTAINER: ViewStyle = {
+	display: "flex",
+	marginBottom: spacing[2],
+	flexDirection: "row"
 }
 
 const COVER_IMAGE: any = {
-	resizeMode: "cover",
+	aspectRatio: 1,
+	borderRadius: 5,
+	width: 128,
+	justifyContent: 'center',
+	alignItems: 'center',
+	resizeMode: "cover"
+}
+
+const PLAYLIST_INFO_DETAILS: ViewStyle = {
+	width: '100%',
+	flexDirection: 'column',
+	alignContent: 'flex-end',
+	justifyContent: 'center',
+	marginHorizontal: spacing[4],
+}
+
+const PLAYLIST_TITLE: TextStyle = {
+	fontSize: 28,
+	fontWeight: 'bold',
+	color: 'white'
+}
+
+const PLAYLIST_COUNT: TextStyle = {
+	fontSize: 16,
+	color: "#ebebf599",
+}
+
+const PLAYLIST_TIME: TextStyle = {
+	...PLAYLIST_COUNT
+}
+
+const PLAYLIST_SONG_CONTAINER: ViewStyle = {
+	marginVertical: spacing[2],
 }
 
 const ROW: ViewStyle = {
-    display: "flex",
-    flexDirection: "row",
-    marginBottom: 10,
+	display: "flex",
+	flexDirection: "row",
+	marginBottom: spacing[2],
+	paddingVertical: spacing[1]
 }
 
 const INFOS: ViewStyle = {
-    display: "flex",
-    justifyContent: "center",
-    paddingLeft: 10,
+	display: "flex",
+	flex: 1,
+	marginRight: spacing[6], // To avoid 'miss touch'
+	justifyContent: "center"
 }
 
 const TITLE: TextStyle = {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "bold",
+	color: "#FFFFFF",
+	fontSize: 16,
+	fontWeight: '700'
 }
 
 const AUTHORS: TextStyle = {
-    ...TITLE,
-    color: "#ebebf599",
+	...TITLE,
+	fontSize: 14,
+	fontWeight: '500',
+	color: "#ebebf599",
 }
 
-interface IMusicProps {
+const RIGHT_SONG_BUTTON: ViewStyle = {
+	justifyContent: 'center',
+	marginLeft: 'auto',
+	right: 0
+}
+
+const RIGHT_SONG_ICON: ViewStyle = {
+	height: 16,
+	width: 16
+}
+
+const PLAYLIST_INTERACT_CONTAINER: ViewStyle = {
+	flexDirection: 'row',
+	justifyContent: 'center',
+	paddingVertical: spacing[2]
+}
+
+const PLAYLIST_PLAY_BUTTON: ViewStyle = {
+	backgroundColor: '#008b4d',
+	borderRadius: 32,
+	height: 48,
+	width: '50%',
+	justifyContent: 'center',
+	alignItems: 'center'
+}
+
+const PLAY_BUTTON_TEXT: TextStyle = {
+	color: 'white',
+	fontWeight: 'bold',
+	textTransform: 'uppercase'
+}
+
+interface ISongCardProps {
 	id: number;
 	title: string;
 	author: string;
-	cover: string;
 }
 
-const MusicsData: IMusicProps[] = [
-	{ id: 1, author: 'Author', title: "Zebi", cover: 'ef' },
-	{ id: 2, author: 'Author', title: "Zebi", cover: 'ef' },
-	{ id: 3, author: 'Author', title: "Zebi", cover: 'ef' },
-	{ id: 4, author: 'Author', title: "Zebi", cover: 'ef' },
-	{ id: 5, author: 'Author', title: "Zebi", cover: 'ef' },
-	{ id: 6, author: 'Author', title: "Zebi", cover: 'ef' },
+const playlistSongs: ISongCardProps[] = [
+	{ id: 1, author: 'Cristobal feat. Vasco', title: "Malabunta" },
+	{ id: 2, author: 'Quemado', title: "Petard" },
+	{ id: 3, author: '44', title: "LSPD" },
+	{ id: 1, author: 'Cristobal feat. Vasco', title: "Malabunta" },
+	{ id: 2, author: 'Quemado', title: "Petard" },
+	{ id: 3, author: '44', title: "LSPD" },
+	{ id: 1, author: 'Cristobal feat. Vasco', title: "Malabunta" },
+	{ id: 2, author: 'Quemado', title: "Petard" },
+	{ id: 3, author: '44', title: "LSPD" },
+	{ id: 1, author: 'Cristobal feat. Vasco', title: "Malabunta" },
+	{ id: 2, author: 'Quemado', title: "Petard" },
+	{ id: 3, author: '44', title: "LSPD" },
 ]
 
-const MusicProps: React.FC<IMusicProps> = (props: IMusicProps) => {
+const SongCard: React.FC<ISongCardProps> = props => {
 	return (
-		<TouchableOpacity onPress={(e) => null}>
-			<View style={{
-				...ROW,
-				backgroundColor: '#262626'
-			}}>
-				<ImageView style={{...COVER_IMAGE, height: 60, width: 60}} source={{ uri: `${S3_URL}/music/${props.id}.png` }} />
-				<View style={INFOS}>
+		<View>
+			<View style={ROW}>
+				<TouchableOpacity style={INFOS} onPress={(e) => null}>
 					<Text style={TITLE}>{props.title}</Text>
 					<Text style={AUTHORS}>{props.author}</Text>
-				</View>
+				</TouchableOpacity>
+				<TouchableOpacity style={RIGHT_SONG_BUTTON} onPress={(e) => null}>
+					<MoreIcon style={RIGHT_SONG_ICON} color="white" fill="white" />
+				</TouchableOpacity>
 			</View>
-		</TouchableOpacity>
+		</View>
 	);
-}
-
-const renderPlaylistMusic = () => {
-	return MusicsData.map((v, k) => {
-		return <MusicProps key={k} {...v} />
-	})
 }
 
 export const PlaylistScreen = observer(function SearchScreen() {
@@ -115,59 +174,27 @@ export const PlaylistScreen = observer(function SearchScreen() {
 		<View style={FULL}>
 			<Wallpaper />
 			<Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-				<Header headerTx="homeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
-
-				<View style={{
-					padding: 20
-				}}>	
-					<View style={{
-						display: "flex",
-						flexDirection: "row"
-					}}>
-						<View style={{
-							marginTop: 20,
-							height: 125,
-							width: 125,
-						}}>
-							<ImageView style={{...COVER_IMAGE, height: 125, width: 125 }} source={{ uri: `${S3_URL}/music/1.png`, priority: FastImage.priority.high, }} />
+				<View style={PLAYLIST_INFO_CONTAINER}>
+					<ImageView style={COVER_IMAGE} source={{ uri: `${S3_URL}/music/1.png`, priority: FastImage.priority.high, }} />
+					<View style={PLAYLIST_INFO_DETAILS}>
+						<View style={{ marginBottom: 8 }}>
+							<Text style={PLAYLIST_TITLE}>Best songs</Text>
 						</View>
-
-						<View>
-							<Text style={{
-								marginTop: 20,
-								marginLeft: 20,
-								marginBottom: 10,
-								fontSize: 15,
-								color: '#ebebf599',
-							}}>Playlist</Text>
-
-							<Text style={{
-								marginLeft: 20,
-								marginBottom: 10,
-								fontSize: 30,
-								color: '#ffffff',
-							}}>Music</Text>
-
-							<Text style={{
-								marginLeft: 20,
-								fontSize: 20,
-								color: "#ebebf599",
-							}}>96 titres</Text>
-
-							
-							<Text style={{	
-								marginLeft: 20,
-								fontSize: 20,
-								color: "#ebebf599",
-							}}>9 h 22 min</Text>
+						<View style={{ justifyContent: 'flex-end' }}>
+							<Text style={PLAYLIST_COUNT}>96 titles</Text>
+							<Text style={PLAYLIST_TIME}>9h 22m</Text>
 						</View>
 					</View>
+				</View>
 
-					<View style={{
-						marginTop: 30
-					}}>
-						{renderPlaylistMusic()}
+				<View style={PLAYLIST_INTERACT_CONTAINER}>
+					<View style={PLAYLIST_PLAY_BUTTON}>
+						<Text style={PLAY_BUTTON_TEXT}>Play songs</Text>
 					</View>
+				</View>
+
+				<View style={PLAYLIST_SONG_CONTAINER}>
+					{playlistSongs.map((v, k) => <SongCard key={k} {...v} />)}
 				</View>
 			</Screen>
 		</View>
